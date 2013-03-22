@@ -6,6 +6,9 @@
 # singled out though. See below for details.
 
 include config.mk
+-include ../config.mk
+-include ../local-config.mk
+-include local-config.mk
 
 BUILD_BOOST = $(BJAM) --toolset=$(TOOLSET) address-model=$(ADDRESS_MODEL) --using-python=$(PYTHON_VERSION) stage link=static -j$(NUM_PROCESSORS)
 
