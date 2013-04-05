@@ -36,10 +36,10 @@ thread: bjam
 system: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-system debug release stage
 
-program-options: bjam
+program_options: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-program_options debug release stage
 
-date-time: bjam
+date_time: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-date_time debug release stage
 
 regex: bjam
