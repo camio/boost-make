@@ -51,7 +51,7 @@ chrono: bjam
 signals: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-signals debug release stage
 
-test: bjam
+unit_test_framework: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-test debug release stage
 
 show: bjam
