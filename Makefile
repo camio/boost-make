@@ -31,7 +31,7 @@ serialization: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-serialization debug release stage
 
 filesystem: bjam
-	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-filesystem debug release stage
+	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-filesystem debug release stage cxxflags=-Zc:wchar_t-
 
 thread: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-thread debug release stage
