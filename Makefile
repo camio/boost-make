@@ -10,7 +10,7 @@ include config.mk
 -include ../local-config.mk
 -include local-config.mk
 
-BUILD_BOOST = $(BJAM) --toolset=$(TOOLSET) address-model=$(ADDRESS_MODEL) --using-python=$(PYTHON_VERSION) stage link=static -j$(NUM_PROCESSORS)
+BUILD_BOOST = ./b2 --toolset=$(TOOLSET) address-model=$(ADDRESS_MODEL) --using-python=$(PYTHON_VERSION) stage link=static -j$(NUM_PROCESSORS)
 
 .PHONY: bjam debug release
 
@@ -27,7 +27,7 @@ debug: bjam
 release: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) release
 
-serialization: bjam
+serialization:
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-serialization debug release stage
 
 filesystem: bjam
@@ -57,7 +57,7 @@ signals: bjam
 timer: bjam
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-timer debug release stage
 
-unit_test_framework: bjam
+unit_test_framework:
 	cd $(BOOST_PATH) && $(BUILD_BOOST) --with-test debug release stage
 
 show: bjam
